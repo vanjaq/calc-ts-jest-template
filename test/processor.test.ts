@@ -5,7 +5,7 @@ let user: User
 let processor: Processor
 
 beforeEach(() => {
-  user = new User('Alex', 'Shimit', '123456', 'test')
+  user = new User('Alex', 'Shidlovskii', '123456', 'test')
   processor = new Processor()
 })
 

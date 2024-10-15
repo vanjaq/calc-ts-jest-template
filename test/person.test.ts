@@ -3,8 +3,8 @@ import { Person } from '../src/person'
 describe('Person Class suite 1', () => {
   test('should return an object with - feature 1.1', () => {
     // Create two instances of Person
-    const person1 = new Person('Alice', 30)
-    const person2 = new Person('Alice', 30)
+    const person1 = new Person('Alice', 21)
+    const person2 = new Person('Alice', 31)
 
     // Test that the returned objects from both instances are equal
     expect(person1.getDetails()).toEqual(person2.getDetails()) // Passes

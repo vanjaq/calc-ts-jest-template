@@ -5,7 +5,7 @@ let user: User
 let processor: Processor
 
 beforeEach(() => {
-  user = new User('Alex', 'Shimit', '123456', 'test')
+  user = new User('Alex', 'Shidlovskii', '123456', 'test', 18)
   processor = new Processor()
 })
 
@@ -25,4 +25,22 @@ test('check processor verify', () => {
 
 test('negative check', () => {
   expect(processor.checkConsent(user)).toBeFalsy()
+})
+
+test('check age less then 18 and can not get consent given', () => {
+  if (user.age < 18) {
+    expect(processor.checkAge(user)).toBeFalsy()
+  }
+})
+
+test('check age more then 18 and can get consent given', () => {
+  if (user.age >= 18) {
+    expect(processor.checkAge(user)).toBeTruthy()
+  }
+})
+
+test('check that concent given revoke', () => {
+  if (user.age < 18) {
+    expect(processor.revokeConsent(user)).toBeUndefined()
+  }
 })

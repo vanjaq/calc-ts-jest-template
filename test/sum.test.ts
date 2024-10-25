@@ -1,4 +1,4 @@
-import { sum } from '../src/calculator'
+import { subtraction, sum } from '../src/calculator'
 
 test('sums two positive integer numbers: basic', () => {
   const expectedResult: number = 4
@@ -31,4 +31,14 @@ test('sums two positive numbers with close to: default precision', () => {
 test('sums two positive numbers with close to: precision', () => {
   // this will fail: high precision
   expect(sum(0.1, 0.2)).toBeCloseTo(0.3, 20)
+})
+
+test('subtraction to positive numbers', () => {
+  const expectedResult = 3
+  const actualResult = subtraction(6, 3)
+  expect(actualResult).toBe(expectedResult)
+})
+
+test('subtraction two negative numbers: passed', () => {
+  expect(subtraction(-3, -3)).toBe(6)
 })

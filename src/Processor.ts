@@ -19,7 +19,7 @@ export class Processor {
 
   revokeConsent(user: User): undefined {
     if (user.age < 18) {
-      user.consentGiven = undefined
+     return (user.consentGiven = undefined)
     }
   }
 }
